@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskDesk</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="img/logo sem fundo.png" alt="Logo WorkSpot" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Quem somos?</a></li>
+          <li><a href="cadastro_tereos.php">Tereos</a></li>
+
+          <li><a href="#contato">Contate-nos</a></li>
+          <li><a href="cadastro.php">Cadastrar</a></li>
+          <li><a href="login.php">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="inicio">
+      <div class="container">
+        <h1>Taskdesk</h1>
+      </div>
+    </section>
+
+    <section id="conteudo_ativo">
+      <div class="container2">
+        <h1>Seu sistema de agendamentos para salas corporativas</h1>
+        <h3 class="subtitulo">
+          Aqui você tem a liberdade de reservar as salas que deseja de acordo
+          com suas necessidades
+        </h3>
+      </div>
+      <div class="carrosel-container">
+        <div class="carrosel">
+          <div class="slides">
+            <div class="slide active">
+              <img src="img/carrosel1.png" alt="Imagem 1" />
+            </div>
+            <div class="slide">
+              <img src="img/carrosel2.png" alt="Imagem 2" />
+            </div>
+            <div class="slide">
+              <img src="img/carrosel3.png" alt="Imagem 3" />
+            </div>
+          </div>
+          <div class="indicadores">
+            <span class="indicador_ativo" data-slide="0"></span>
+            <span class="indicador" data-slide="1"></span>
+            <span class="indicador" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <h1 class="quem_somos">Quem somos?</h1>
+       
+
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <p class="python">
+                Nós da TaskDesk temos uma parceria com a empresa Tereos. Dessa
+                forma, este site atende as necessidades de agendamento da
+                empresa durante o trabalho híbrido.
+              </p>
+            </div>
+          </div>
+          <div class="face face2">
+            <img src="img/logo sem fundo.png" />
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <p class="python">
+                Temos o objetivo de te ajudar a localizar espaços coworking de
+                acordo com a sua localidade, apresentando detalhes sobre os
+                ambientes desejados e de possibilidades de agendamentos para a
+                sua rotina.
+              </p>
+            </div>
+          </div>
+          <div class="face face2">
+            <img src="img/logo sem fundo.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="solucao-section">
+      <h1 class="solucao-titulo">
+        Uma solução para a procura de ambientes corporativos
+      </h1>
+      <p class="solucao">
+        A gestão da TaskDesk oferece soluções para alugar os mais diversos
+        espaços.
+      </p>
+      <div class="container_icones">
+        <div class="icone">
+          <img src="img/monitor.png" alt="icone1" />
+          <p class="icone-texto">Sala de computadores</p>
+        </div>
+        <div class="icone">
+          <img src="img/sofa.png" alt="icone2" />
+          <p class="icone-texto">Salas individuais</p>
+        </div>
+        <div class="icone">
+          <img src="img/reuniao_icone.png" alt="icone3" />
+          <p class="icone-texto">Sala de reuniões</p>
+        </div>
+        <div class="icone">
+          <img src="img/xicara-de-cafe.png" alt="icone4" />
+          <p class="icone-texto">Sala com cafés</p>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <section class="melhores-salas">
+      <h2>Salas em Destaque</h2>
+      <p class="subtitulo">Essas são as salas mais escolhidas no sistema</p>
+      <div class="sala">
+        <div class="sala-imagem">
+          <img src="img/sala com café.jpg" alt="Imagem da Sala 1" />
+        </div>
+        <div class="sala-descricao">
+          <h3>Sala de reunião com café</h3>
+          <p>
+            Espaço moderno e confortável. A melhor opção para
+            reuniões executivas e proveito do networking.
+            Disponível para
+            até doze pessoas, com opção de pausas para café e lanches.
+          </p>
+        </div>
+      </div>
+
+      <div class="sala">
+        <div class="sala-imagem">
+          <img
+            src="img/sala individual.jpeg"
+            alt="Imagem da Sala 2"
+            class="privada"
+          />
+        </div>
+        <div class="sala-descricao">
+          <h3>Espaço individual</h3>
+          <p>
+            Ambiente ideal para quem está procurando um refúgio confortável e equipado com internet a cabo, ar condicionado e mesa para estudo. Disponível para uma pessoa.
+          </p>
+        </div>
+      </div>
+
+      <div class="sala">
+        <div class="sala-imagem">
+          <img
+            src="img/sala reuniao.jpg"
+            alt="Imagem da Sala 2"
+            class="privada"
+          />
+        </div>
+        <div class="sala-descricao">
+          <h3>Espaço compartilhado</h3>
+          <p>
+            Ambiente amplo, ideal para treinamentos e workshops. Possui quadros
+            interativos, projetor, TVs e configuração flexível para acomodar até 15
+            participantes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h4>Sobre TaskDesk</h4>
+            <p>
+              Sistema de agendamentos de salas corporativas, proporcionando
+              praticidade e flexibilidade para o seu trabalho.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Links Rápidos</h4>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#sobre">Quem Somos</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Envie uma Reclamação</h4>
+            <form
+              action="enviar_reclamacao.php"
+              method="POST"
+              class="reclamacao-form"
+            >
+              <input type="text" name="nome" placeholder="Seu Nome" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Seu E-mail"
+                required
+              />
+              <textarea
+                name="reclamacao"
+                placeholder="Digite sua reclamação"
+                required
+              ></textarea>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 TaskDesk. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="salas.css  ">
+    <script src="localiza.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-M7WSlxNnI49Jma4NSrFaZUSMSCgigqg&loading=async&libraries=places&callback=initMap" async defer></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/logo sem fundo.png" alt="Logo WorkSpot">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+    
+                <li><a href="index.html">Contate-nos</a></li>
+            </ul>
+        </nav>
+       </header>
+
+
+       <h1>Descubra Coworkings Próximos</h1>
+    
+        <input type="text" placeholder="Digite seu endereço para descobrir um coworking próximo de você!" id="inputLoc">
+        <button type="submit" id="buscarLoc">Buscar</button>
+        <div id="map"></div>
+        <section id="resultadosCoworking">
+            <div id="resultados">
+                <h2>Coworkings encontrados perto de você</h2>
+                <div class="grid-container" id="grid-container">
+
+                </div>
+            </div>
+        </section>
+        
+    
+</body>
+</html>
