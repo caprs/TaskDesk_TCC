@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
+    <link rel="icon" type="image/png" href="img/logo sem fundo.png">
+
 </head>
 <body>
 <?php

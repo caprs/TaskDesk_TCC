@@ -6,47 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tereos</title>
     <link rel="stylesheet" href="cadastro_tereos.css" />
+    <link rel="icon" type="image/png" href="img/logo sem fundo.png">
 
 </head>
 </head>
 
 <body>
-    <?php
-    //Configurações do banco de dados
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "banco_tcc";
+<?php
+session_start(); // Adicionado para gerenciar as sessões
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "banco_tcc";
 
-    // Criando a conexão
-    $conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Verificando a conexão
-    if ($conn->connect_error) {
-        die("Conexão falhou: " . $conn->connect_error);
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $rm = $_POST['rm'];
+    $senha = $_POST['senha'];
+
+    $sql = "SELECT nome, rm FROM usuarios WHERE rm = ? AND senha = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $rm, $senha);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['usuario_logado'] = $row['nome']; // Armazena o nome do usuário
+        $_SESSION['rm_logado'] = $row['rm'];       // Armazena o RM do usuário
+        header("Location: agendamento.php");
+        exit();
+    } else {
+        echo "<p style='color: red;'>RM ou senha inválidos.</p>";
     }
+}
+?>
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $rm = $_POST['rm'];
-        $senha = $_POST['senha'];
-    
-        $sql = "SELECT nome, rm FROM usuarios WHERE rm = ? AND senha = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $rm, $senha);
-        $stmt->execute();
-        $result = $stmt->get_result();
-    
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $_SESSION['usuario_logado'] = $row['nome']; // Salva o nome do usuário
-            $_SESSION['rm_logado'] = $row['rm'];       // Salva o RM do usuário
-            header("Location: agendamento.php");      // Redireciona para agendamentos.php
-            exit();
-        } else {
-            echo "<p style='color: red;'>RM ou senha inválidos.</p>";
-        }
-    }
-    ?>
 
     <header>
         <nav class="navbar">

@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Rubik", sans-serif;
+    background-color: #d9f2ff;
+  }
+  
+  header {
+    background-color: #d9f2ff;
+    padding: 10px 20px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+  
+  img {
+    width: 250px;
+    margin-left: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    margin-left: 2 0px;
+    text-decoration: none;
+    color: #1e96e0;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: rgb(194, 180, 180);
+  }
+  
+  .btn-navbar {
+    background-color: #1825c5;
+    color: rgb(191, 190, 190);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+  }
+  
+  /* Estilo para a div de informações de agendamento */
+.agendamento-info {
+    margin: 20px auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    width: 80%; /* Largura da div */
+    max-width: 600px; /* Largura máxima */
+    background-color: #d9f2ff; /* Fundo claro */
+    border: 2px solid #1825c5; /* Borda verde */
+    border-radius: 10px; /* Arredondamento */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    font-family: Arial, sans-serif; /* Fonte */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+/* Títulos dentro da div */
+.agendamento-info h3 {
+    font-family: "Rubik", sans-serif;
+    margin-bottom: 10px; /* Espaçamento inferior */
+    color: #182d4a; /* Cor verde para o título */
+    font-size: 20px;
+    text-align: center; /* Centralizar o título */
+}
+
+/* Lista de agendamentos */
+.agendamento-info ul {
+    list-style: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margem */
+}
+
+/* Itens da lista */
+.agendamento-info ul li {
+    text-align: center;
+    padding: 10px; /* Espaçamento interno dos itens */
+    border-bottom: 1px solid #ddd; /* Linha divisória */
+}
+
+/* Último item da lista sem linha divisória */
+.agendamento-info ul li:last-child {
+    border-bottom: none;
+}
+
+/* Texto quando a sala está disponível */
+.agendamento-info p {
+    text-align: center; /* Centraliza o texto */
+    color: #4caf50; /* Texto verde */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.agendamento-info {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border: 2px solid #182d4a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-align: center; /* Centraliza o conteúdo */
+    overflow: visible; /* Garante que o botão seja exibido */
+}
+
+.botao-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #182d4a;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #005f87;
+}

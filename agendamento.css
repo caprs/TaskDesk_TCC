@@ -62,7 +62,7 @@ header h1 {
   text-align: center;
   font-size: 2.5rem;
   margin: 20px 0;
-  color: #1e96e0;
+  color: #182d4a;
 }
 
 /* Form container */
@@ -91,11 +91,10 @@ header h1 {
 }
 
 .container form input[type="submit"] {
-  background-color: #1e96e0;
+  background-color: #182d4a;
   color: #fff;
   border: none;
   cursor: pointer;
-  font-weight: bold;
   transition: background-color 0.3s;
 }
 
@@ -175,7 +174,7 @@ select:focus {
 
 /* Estilo do botão submit */
 input[type="submit"] {
-  background-color: #3498db;
+  background-color: #182d4a;
   color: #fff;
   border: none;
   padding: 12px;
@@ -187,5 +186,33 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #2980b9;
+}
+
+/* Estilo base para a mensagem */
+.message {
+  position: fixed; 
+  top: 10%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centralização exata */
+  padding: 20px 40px; /* Espaçamento interno */
+  font-size: 18px; /* Tamanho da fonte */
+  color: black; /* Cor do texto */
+  border-radius: 10px; /* Arredondamento */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  opacity: 1; /* Totalmente visível inicialmente */
+  transition: opacity 0.5s ease-in-out; /* Efeito de desaparecimento */
+}
+
+.message.success {
+  background-color: #4caf50; 
+}
+
+.message.error {
+  background-color: #f44336; 
+}
+
+.message.fade-out {
+  opacity: 0; 
 }
 

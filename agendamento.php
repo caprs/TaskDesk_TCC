@@ -4,20 +4,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sistema Inicial</title>
+        <title>Agendamento Tereos</title>
         <link rel="stylesheet" href="agendamento.css">
+        <link rel="icon" type="image/png" href="img/logo sem fundo.png">
 
     </head>
 
     <body>
 
-
-
         <?php
         session_start();
-
-
-        
 
         $servername = "localhost";
         $username = "root";
@@ -31,29 +27,32 @@
         }
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $sala = $_POST['sala'];
-            $data_inicio = $_POST['data_inicio'];
-            $data_final = $_POST['data_final'];
-            $horario_inicio = $_POST['horario_inicial'];
-            $horario_final = $_POST['horario_final'];
-            $nome_agendador = $usuario_logado; // Nome do usuário logado
-            $rm_funcionario = $rm_logado; // RM do usuário logado
+            $sala = $_POST['sala'] ?? null;
+            $data_inicio = $_POST['data_inicio'] ?? null;
+            $data_final = $_POST['data_final'] ?? null;
+            $horario_inicio = $_POST['horario_inicial'] ?? null;
+            $horario_final = $_POST['horario_final'] ?? null;
+            $nome_agendador = $_POST['nome_agendador'] ?? null;
+            $rm_funcionario_fk = $_POST['rm'] ?? null;
 
-            $stmt = $conn->prepare("INSERT INTO agendamentos (sala, data_inicio, data_final, horario_inicio, horario_final, nome_agendador, rm_funcionario_fk) 
-VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssssi", $sala, $data_inicio, $data_final, $horario_inicio, $horario_final, $nome_agendador, $rm_funcionario);
-
-            if ($stmt->execute()) {
-                echo "<p style='color: green; text-align: center; padding: 20px;'>Olá, $usuario_logado! Sala agendada com sucesso!</p>";
-            } else {
-                echo "<p style='color: red; text-align: center;'>Erro ao agendar a sala: " . $stmt->error . "</p>";
+            if ($sala && $data_inicio && $data_final && $horario_inicio && $horario_final && $nome_agendador && $rm_funcionario_fk) {
+                $stmt = $conn->prepare(
+                    "INSERT INTO agendamentos (sala, data_inicio, data_final, horario_inicio, horario_final, nome_agendador, rm_funcionario_fk) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)"
+                );
+                $stmt->bind_param("ssssssi", $sala, $data_inicio, $data_final, $horario_inicio, $horario_final, $nome_agendador, $rm_funcionario_fk);
+                $stmt->execute();
+                echo "<div class='message success'>Sala agendada com sucesso!</div>";
+            } else{
+                echo "<div class='message error'>Erro ao agendar sala. Tente novamente! </div>";
             }
-
             $stmt->close();
         }
 
         $conn->close();
         ?>
+
+
 
 
 
@@ -155,5 +154,16 @@ VALUES (?, ?, ?, ?, ?, ?, ?)");
 
 
     </body>
+    <script>
+    // Aguarda 3 segundos e depois adiciona a classe fade-out
+    setTimeout(() => {
+        const message = document.querySelector('.message');
+        if (message) {
+            message.classList.add('fade-out');
+            // Remove a mensagem do DOM após a transição
+            setTimeout(() => message.remove(), 500);
+        }
+    }, 3000); // 3000ms = 3 segundos
+</script>
 
     </html>
